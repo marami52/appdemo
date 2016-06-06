@@ -12,14 +12,35 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   
   if(dist == "normal"){
     #plot(rnorm(n), col="red")
-    #hist(rnorm(n))
-    plot(lm(mpg~disp, data=mtcars))
+    hist(rnorm(n))
+    #plot(lm(mpg~disp, data=mtcars))
   }
   
   if(dist == "uniform"){
     #plot(rnorm(n), col="green")
+    hist(runif(n))
+    #plot(lm(mpg~disp, data=mtcars))
+  }
+
+  #return nothing
+  invisible();  
+}
+
+randomplot1 <- function(n, dist=c("normal", "uniform")){
+  #input validation
+  dist <- match.arg(dist)
+  stopifnot(n < 1e6)
+  
+  if(dist == "normal"){
+    plot(rnorm(n), col="red")
+    #hist(rnorm(n))
+    #plot(lm(mpg~disp, data=mtcars))
+  }
+  
+  if(dist == "uniform"){
+    plot(rnorm(n), col="green")
     #hist(runif(n))
-    plot(lm(mpg~disp, data=mtcars))
+    #plot(lm(mpg~disp, data=mtcars))
   }
   
   #return nothing
