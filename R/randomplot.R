@@ -12,12 +12,12 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   
   if(dist == "normal"){
     plot(rnorm(n), col="red")
-    hist(rnorm(n))
+    #hist(rnorm(n))
   }
   
   if(dist == "uniform"){
     plot(rnorm(n), col="green")
-    hist(runif(n))
+    #hist(runif(n))
   }
   
   #return nothing
