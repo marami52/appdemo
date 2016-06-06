@@ -5,7 +5,7 @@
 #' @export
 #' @param n numer of random values 
 #' @param dist one of "normal" or "uniform".
-randomplot <- function(n, dist=c("normal", "uniform")){
+randomplot1 <- function(n, dist=c("normal", "uniform")){
   #input validation
   dist <- match.arg(dist)
   stopifnot(n < 1e6)
@@ -26,7 +26,7 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   invisible();  
 }
 
-randomplot1 <- function(n, dist=c("normal", "uniform")){
+randomplot <- function(n, dist=c("normal", "uniform")){
   #input validation
   dist <- match.arg(dist)
   stopifnot(n < 1e6)
