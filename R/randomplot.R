@@ -11,13 +11,15 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   stopifnot(n < 1e6)
   
   if(dist == "normal"){
-    plot(rnorm(n), col="red")
+    #plot(rnorm(n), col="red")
     #hist(rnorm(n))
+    plot(lm(mpg~disp, data=mtcars))
   }
   
   if(dist == "uniform"){
-    plot(rnorm(n), col="green")
+    #plot(rnorm(n), col="green")
     #hist(runif(n))
+    plot(lm(mpg~disp, data=mtcars))
   }
   
   #return nothing
