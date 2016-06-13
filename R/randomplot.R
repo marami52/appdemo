@@ -33,7 +33,11 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   stopifnot(n < 1e6)
   
   if(dist == "normal"){
-    plot(rnorm(n), col="red")
+    library(plotly)
+    set.seed(100)
+    d <- diamonds[sample(nrow(diamonds), 1000), ]
+    plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),
+            mode = "markers", color = carat, size = carat)
     #hist(rnorm(n))
     #plot(lm(mpg~disp, data=mtcars))
   }
