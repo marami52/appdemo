@@ -36,8 +36,8 @@ randomplot <- function(n, dist=c("normal", "uniform")){
     library(plotly)
     set.seed(100)
     d <- diamonds[sample(nrow(diamonds), 1000), ]
-    plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),
-            mode = "markers", color = carat, size = carat)
+    plotlyOutput(plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),
+            mode = "markers", color = carat, size = carat))
     #hist(rnorm(n))
     #plot(lm(mpg~disp, data=mtcars))
   }
