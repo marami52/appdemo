@@ -49,5 +49,5 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   }
   
   #return nothing
-  invisible();  
+  #invisible();  
 }
