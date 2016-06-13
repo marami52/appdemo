@@ -14,6 +14,7 @@ randomplot1 <- function(n, dist=c("normal", "uniform")){
     #plot(rnorm(n), col="red")
     hist(rnorm(n))
     #plot(lm(mpg~disp, data=mtcars))
+    #test
   }
   
   if(dist == "uniform"){
