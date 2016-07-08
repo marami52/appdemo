@@ -43,7 +43,17 @@ randomplot <- function(n, dist=c("normal", "uniform")){
   }
   
   if(dist == "uniform"){
-    plot(rnorm(n), col="green")
+    library(ggplot2)
+    dat <- data.frame(cond = rep(c("A", "B"), each=10),
+                  xvar = 1:20 + rnorm(20,sd=3),
+                  yvar = 1:20 + rnorm(20,sd=3))
+                  
+    ggplot(dat, aes(x=xvar, y=yvar)) +
+    geom_point(shape=1) +    # Use hollow circles
+    geom_smooth()            # Add a loess smoothed fit curve with confidence region
+    
+    
+    #plot(rnorm(n), col="green")
     #hist(runif(n))
     #plot(lm(mpg~disp, data=mtcars))
   }
